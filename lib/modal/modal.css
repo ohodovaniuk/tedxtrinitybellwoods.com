@@ -1,0 +1,87 @@
+/* Modal general styling */
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    float: left;
+    /*Added*/
+    /*width: 100%;
+    max-width: 1200px;*/
+    /*2400px;/*630px;*/
+    min-width: 320px;
+    z-index: 2000;
+    visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.modal-show {
+    visibility: visible;
+}
+
+.modal-content {
+    color: #fff;
+    position: relative;
+    border-radius: 3px;
+    margin: 0 auto;
+}
+
+.modal-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    opacity: 0;
+    /*background: rgba(143, 27, 15, 0.8);*/
+    background-color: rgba(34, 34, 34, 0.8);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.modal-overlay-show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* Modal effect: Slide from the bottom (color overlay) */
+
+.modal-effect-slide .modal-content,
+.modal-effect-blur .modal-content {
+    -webkit-transform: translateY(20%);
+    -moz-transform: translateY(20%);
+    -ms-transform: translateY(20%);
+    transform: translateY(20%);
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.modal-effect-slide.modal-show .modal-content,
+.modal-effect-blur.modal-show .modal-content {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+/* Modal effect:  Blur (blur overlay) */
+
+.modal-effect-blur.modal-show+.container {
+    -webkit-filter: blur(12px);
+    -moz-filter: blur(12px);
+    filter: blur(12px);
+}
